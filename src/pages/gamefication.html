@@ -1,0 +1,93 @@
+<body>
+  <div class="container">
+    <!-- Pontuação -->
+    <div class="row mb-5">
+      <div class="col-0 col-md-4"></div>
+      <div class="col-12 col-md-4">
+        <div id="points" class="display-points">
+          <p class="m-0"><span>0</span> pts</p>
+        </div>
+      </div>
+      <div class="col-0 col-md-4"></div>
+    </div>
+
+    <!-- Parde de baixo -->
+    <div class="row">
+      <!-- Lado esquerdo -->
+      <div class="col-12 col-md-9 mb-5 mb-md-0">
+        <!-- Pesquisar aluno -->
+        <div class="row">
+          <label for="search-student" class="mb-1">Adicionar aluno</label>
+          <div class="col-9 pr-0">
+            <input
+              id="search-student"
+              name="search-student"
+              type="number"
+              placeholder="Digite a matrícula do aluno..."
+              class="input-pattern mb-5"
+            />
+          </div>
+          <div class="col-3" style="padding-left: 0">
+            <button class="button-pattern" onclick="addStudent()">
+              <span class="d-none d-md-inline">Adicionar</span>
+              <span class="d-inline d-md-none"
+                ><i class="fa fa-plus" aria-hidden="true"></i
+              ></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Marcadores -->
+        <div class="row mb-3 mx-0 markers-pattern">
+          <div class="col-4 col-md-2">Matrícula</div>
+          <div class="col-4 col-md-5">Aluno</div>
+          <div class="col-4 col-md-5">Situação</div>
+        </div>
+
+        <!-- Tabela de alunos -->
+        <div class="row">
+          <div class="col-md-12">
+            <ul id="students-list" class="list-group">
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lado direito -->
+      <div class="col-12 col-md-3 side-bar">
+        <!-- Lista de prêmios -->
+        <div class="row">
+          <div class="col-12 mb-5">
+            <label class="mb-1">Prêmios conquistados</label>
+            <ul id="prizes-list" class="list-group"></ul>
+          </div>
+        </div>
+
+        <!-- Lista de explicações -->
+        <div class="row">
+          <div class="col-12">
+            <label class="mb-1">Como funciona?</label>
+            <ul id="explanations-list" class="list-group">
+              <li class="list-group-item">Negativo - 0 pts</li>
+              <li class="list-group-item">Neutro - 50 pts</li>
+              <li class="list-group-item">Positivo - 100 pts</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      onclick="getRandomMatricula()"
+      class="simulation-button"
+    >
+      <i class="fa fa-refresh" aria-hidden="true"></i>
+    </button>
+  </div>
+</body>
