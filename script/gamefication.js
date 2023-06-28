@@ -1,47 +1,7 @@
 
 var points = 0;
 
-var addedStudents = [
-    {
-        matricula: "567890",
-        nome: "Luiz Souza",
-        notaPrimeiraProva: 16,
-        notaSegundaProva: 23,
-        materias: [
-            "Arquitetura de Computadores I",
-            "Arquitetura de Computadores II",
-            "Cálculo I",
-            "Desenvolvimento de Interfaces WEB",
-            "Laboratório de Introdução á Engenharia de Computação",
-            "Linguagem de Programação"
-        ]
-    },
-    {
-        matricula: "678901",
-        nome: "Carla Ferreira",
-        notaPrimeiraProva: 27,
-        notaSegundaProva: 27,
-        materias: [
-            "Algoritmos e Estrutura de Dados I - AEDs I",
-            "Algoritmos e Estrutura de Dados II - AEDs II",
-            "Arquitetura de Computadores I",
-            "Banco de Dados"
-        ]
-    },
-    {
-        matricula: "789012",
-        nome: "Gabriel Ribeiro",
-        notaPrimeiraProva: 14,
-        notaSegundaProva: 13,
-        materias: [
-            "Algoritmos e Estrutura de Dados II - AEDs II",
-            "Arquitetura de Computadores I",
-            "Arquitetura de Computadores II",
-            "Cálculo I",
-            "Desenvolvimento de Interfaces WEB"
-        ]
-    },
-];
+var addedStudents = [students[0], students[1], students[2]];
 
 function updatePoints(newPoints){
     points = newPoints;

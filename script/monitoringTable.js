@@ -1,6 +1,19 @@
-var fullData = monitoring_sessions;
+
+/*
+    Const used to store all the data from monitoring session.
+*/
+const fullData = monitoring_sessions;
+
+
+/*
+    Variabel used to store the the data according to search input.
+*/
 var filteredData;
 
+
+/*
+    Function used to show the full monitoring information in a modal on mobile view.
+*/
 function showInfo(monitoringClass){
     const modal = $('#monitoringModal');
 
@@ -31,6 +44,10 @@ function showInfo(monitoringClass){
     modal.modal('show');
 }
 
+
+/*
+    Function used to generate the data for monitoring table.
+*/
 function showData(){
     let strComponent = "";
     filteredData?.map((m) => {
@@ -51,9 +68,13 @@ function showData(){
         </li>`;
     });
 
-    $("#list").html(strComponent);
+    $("#list").empty().html(strComponent);
 }
 
+
+/*
+    Function used to check if data fits into search input.
+*/
 function filterTable(text, monitoring){
     text = text.toLowerCase();
     return !!(monitoring.materia.toString().toLowerCase().includes(text) || 
@@ -62,7 +83,22 @@ function filterTable(text, monitoring){
     );
 }
 
+
+/*
+    Function used to trigger search event.
+    First checks if search input is empty.
+    If not empty, filter the data and call showData() generate the table.
+*/
 function searchData(text){
+    $("#list").empty().html(`
+        <li class="list-group-item d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        <li class="list-group-item">`
+        
+    );
+
     if(text === ""){
         filteredData = fullData;
     } else {
@@ -77,6 +113,9 @@ function searchData(text){
     showData();
 }
 
+/*
+    Function used to trigger functions for monitoring table page on loading.
+*/
 function loadMonitoringTablePage(){
     searchData("");
 }
